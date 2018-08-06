@@ -1,0 +1,25 @@
+.grid {
+    margin: 0 8px;
+    display: grid;
+    width: 360px;
+    height: 320px;
+    grid-template: repeat(2, 1fr) / repeat(2, 1fr);
+    grid-template-areas: 'info date' 'text text';
+}
+
+.info {
+    grid-area: info;
+}
+
+.date {
+    grid-area: date;
+}
+
+.text {
+    grid-area: text;
+}
+
+.line {
+    margin: 0 auto;
+    width: 340px;
+}
