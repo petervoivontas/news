@@ -18,10 +18,9 @@ export class Topic extends React.Component {
             <div>
                 <div className='grid'>
                     <div className='info'>
-                        <h2 className='title'>{this.props.title}</h2>
+                        <p className='title'>{this.props.title}</p>
                         <p className='author'>By {this.props.author}</p>
                     </div>
-                    <p className='date'>{this.props.date}</p>
                     <p className='text'>{this.props.children}</p>
                 </div>
                 <hr className='line'/>
