@@ -1,4 +1,5 @@
 import React from 'react';
+import menuicon from './menuicon.png';
 import './Header.css';
 
 export class Header extends React.Component {
@@ -6,9 +7,7 @@ export class Header extends React.Component {
         return (
             <header className='header'>
                 <img src='favicon.ico' alt='logo' className='logo'/>
-                <p className='home'>Home</p>
-                <p className='explore'>Explore</p>
-                <p className='profile'>Profile</p>
+                <img src={menuicon} alt='menu icon' className='menuicon'/>
             </header>
         )
     }
