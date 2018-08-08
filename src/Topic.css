@@ -19,6 +19,7 @@
 
 .author {
     font-family: 'Merriweather', serif;
+    color: rgb(127, 127, 127);
 }
 .text {
     grid-area: text;
