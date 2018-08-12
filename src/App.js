@@ -1,5 +1,5 @@
 import React from 'react';
-import {Home} from './Home';
+/**import {Home} from './Home';*/
 import { Header } from './Header';
 import './App.css';
 
@@ -8,7 +8,7 @@ export class App extends React.Component {
     return (
       <div>
         <Header/>
-        <Home/>
+        {/**<Home/>*/}
       </div>
     );
   }

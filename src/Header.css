@@ -1,22 +1,37 @@
 .header {
     display: grid;
-    width: 360px;
-    height: 58px;
-    grid-template: 100% / repeat(2, 1fr);
-    grid-template-areas: 'logo menu';
+    grid-template: 100% / 70px 220px 70px;
+    grid-template-areas: 'logo button menu';
 }
 
 .logo {
-    margin: 10px 0 0 10px;
     grid-area: logo;
-    width: 50px;
-    height: 50px;
+    width: 70px;
+    height: 70px;
+    margin-top: 4px;
+}
+
+.signupbutton {
+    grid-area: button;
+    margin: 15px 8px 15px 100px;
+    border: 1px #98B1C4 solid;
+    border-radius: 25px;
+    color: #414141;
+}
+
+.signupbutton:hover {
+    background-color: #98B1C4;
+}
+
+.buttontext {
+    width: 60px;
+    margin: 17px 26px;
 }
 
 .menuicon {
-    margin: 8px 0 0 120px;
     grid-area: menu;
-    width: 50px;
-    height: 50px;
+    width: 70px;
+    height: 70px;
+    margin-top: 10px;
     opacity: 0.5;
 }
