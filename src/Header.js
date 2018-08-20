@@ -8,9 +8,11 @@ export class Header extends React.Component {
         return (
             <header className='header'>
                 <img className='logo' src={logo} alt='Logo'/>
-                <div className='signupbutton'>
-                    <p className='buttontext'>Sign Up</p>
-                </div>
+                <a href='../signup.html'>
+                    <div className='signupbutton' >
+                        <p className='buttontext'>Sign Up</p>
+                    </div>
+                </a>
                 <img className='menuicon' src={menuicon} alt='Menu icon'/>
             </header>
         )
