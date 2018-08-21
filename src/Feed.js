@@ -8,7 +8,7 @@ export class Feed extends React.Component {
             topics.map((topic, i) => {
                 console.log(`topics.js contains ${topics.length} topics`);
                 console.log(`This is the topic # ${i}`);
-                return <Topic title={topic.title} date={topic.date} author={topic.author} index={i}>{topic.text}</Topic>
+                return <Topic title={topic.title} date={topic.date} author={topic.author} index={i} key={i}>{topic.text}</Topic>
             })
         )
     }

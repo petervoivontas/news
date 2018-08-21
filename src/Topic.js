@@ -1,9 +1,8 @@
 import React from 'react';
-/*import {topics} from './topics';*/ //Necessary comment for React to not show a warning
+import {topics} from './topics';
 import './Topic.css'
 
 export class Topic extends React.Component {
-    /**
     isLast (index) {
         if (index + 1 === topics.length) {
             return true;
@@ -11,10 +10,22 @@ export class Topic extends React.Component {
             return false;
         }
     }
-    */
+    
 
     render () {
-        return (
+        let isLast = (
+            <div>
+                <div className='grid'>
+                    <div className='info'>
+                        <p className='title'>{this.props.title}</p>
+                        <p className='author'>By {this.props.author}</p>
+                    </div>
+                    <p className='text'>{this.props.children}</p>
+                </div>
+            </div>
+        );
+
+        let isNotLast = (
             <div>
                 <div className='grid'>
                     <div className='info'>
@@ -25,6 +36,12 @@ export class Topic extends React.Component {
                 </div>
                 <hr className='line'/>
             </div>
-        )
+        );
+
+        if (this.isLast(this.props.index)) {
+            return isLast;
+        } else {
+            return isNotLast;
+        }
     }
 }
