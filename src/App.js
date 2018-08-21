@@ -3,7 +3,7 @@ import logo from './logo.png'
 import menuicon from './menuicon.png';
 import { Feed } from './Feed';
 import { Signup } from './Signup';
-import './header.css';
+import './Header.css';
 
 export class App extends React.Component {
     constructor (props) {

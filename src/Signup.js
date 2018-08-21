@@ -1,4 +1,5 @@
 import React from 'react';
+import { insertUsers } from './users_mongodb_insert';
 import './Signup.css';
 
 export class Signup extends React.Component {
@@ -8,14 +9,11 @@ export class Signup extends React.Component {
     }
 
     handleClick () {
-        var MongoClient = require('../node_modules/mongodb').MongoClient;
-        var url = 'mongodb://localhost:27017/nuntium';
-        MongoClient.connect(url, (err, db) => {
-            if (err) {
-                throw err;
-            }
-            console.log('Database created');
-        })
+        let username = document.getElementById('username').nodeValue;
+        let email = document.getElementById('email').nodeValue;
+        let password = document.getElementById('passwowrd').nodeValue;
+        console.log(username, email, password);
+        insertUsers(username, email, password);
     }
 
     render () {
@@ -28,11 +26,11 @@ export class Signup extends React.Component {
                 </div>
                 <div>
                     <p>Your name</p>
-                    <input title='username' autoComplete='on'></input>
+                    <input id='username'title='username' autoComplete='on'></input>
                     <p>Email</p>
-                    <input title='email' autoComplete='on'></input>
+                    <input id='email' title='email' autoComplete='on'></input>
                     <p>Password</p>
-                    <input title='password' autoComplete='on'></input>
+                    <input id='password' title='password' autoComplete='on'></input>
                     <br />
                     <br />
                     <button onClick={this.handleClick}>Sign Up</button>
