@@ -1,16 +1,16 @@
-var MongoClient = require('mongodb').MongoClient;
-var url = 'mongodb://localhost:27017/nuntium';
+const MongoClient = require('mongodb').MongoClient;
+const url = 'mongodb://localhost:27017/nuntium';
 
-export const insertUsers = (name, email, password) => {
+const insertUsers = (newUser) => {
     MongoClient.connect(url, (err, db) => {
         if (err) {
             throw err;
         }
-        var dbo = db.db('nuntium');
-        var userToInsert = {
-            username: name,
-            email: email,
-            password: password
+        const dbo = db.db('nuntium');
+        const userToInsert = {
+            username: newUser.name,
+            email: newUser.email,
+            password: newUser.password
         };
         dbo.collection('users').insertOne(userToInsert, (err, res) => {
             if (err) {
@@ -21,3 +21,4 @@ export const insertUsers = (name, email, password) => {
         });
     });
 }
+

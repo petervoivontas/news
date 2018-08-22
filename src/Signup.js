@@ -1,5 +1,4 @@
 import React from 'react';
-import { insertUsers } from './users_mongodb_insert';
 import './Signup.css';
 
 export class Signup extends React.Component {
@@ -9,11 +8,7 @@ export class Signup extends React.Component {
     }
 
     handleClick () {
-        let username = document.getElementById('username').nodeValue;
-        let email = document.getElementById('email').nodeValue;
-        let password = document.getElementById('passwowrd').nodeValue;
-        console.log(username, email, password);
-        insertUsers(username, email, password);
+        window.location.replace(`http://localhost:3056/signup?name=${document.getElementById('username').value}&email=${document.getElementById('email').value}&password=${document.getElementById('password').value}`);
     }
 
     render () {
@@ -26,11 +21,11 @@ export class Signup extends React.Component {
                 </div>
                 <div>
                     <p>Your name</p>
-                    <input id='username'title='username' autoComplete='on'></input>
+                    <input id='username' title='username' type='text' autoComplete='on'></input>
                     <p>Email</p>
-                    <input id='email' title='email' autoComplete='on'></input>
+                    <input id='email' title='email' type='email' autoComplete='on'></input>
                     <p>Password</p>
-                    <input id='password' title='password' autoComplete='on'></input>
+                    <input id='password' title='password' type='password' autoComplete='on'></input>
                     <br />
                     <br />
                     <button onClick={this.handleClick}>Sign Up</button>
