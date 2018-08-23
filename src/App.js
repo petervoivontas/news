@@ -9,7 +9,7 @@ export class App extends React.Component {
     constructor (props) {
         super(props);
         this.state = {
-            page: 'home'
+            page: 'signup' // until express integration is done
         };
         this.handleClick = this.handleClick.bind(this);
     }

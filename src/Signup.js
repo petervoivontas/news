@@ -8,7 +8,25 @@ export class Signup extends React.Component {
     }
 
     handleClick () {
-        window.location.replace(`http://localhost:3056/signup?name=${document.getElementById('username').value}&email=${document.getElementById('email').value}&password=${document.getElementById('password').value}`);
+        fetch('http://localhost:4000/signup', {
+            method: 'POST',
+            body: JSON.stringify({
+                name: document.getElementById('username').value,
+                email: document.getElementById('email').value,
+                password: document.getElementById('password').value
+            }),
+            headers:{
+                'Content-Type': 'application/json'
+            },
+        }).then(response => {
+            if (response.ok) {
+                return response.json();
+            }
+            throw new Error('Request failed');
+        }, networkError => console.log(networkError)
+        ).then(jsonResponse => {
+            console.log(jsonResponse);
+        });
     }
 
     render () {

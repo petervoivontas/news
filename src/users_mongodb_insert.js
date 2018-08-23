@@ -1,18 +1,13 @@
 const MongoClient = require('mongodb').MongoClient;
-const url = 'mongodb://localhost:27017/nuntium';
+const url = 'mongodb://192.168.2.7:27017/nuntium';
 
-const insertUsers = (newUser) => {
-    MongoClient.connect(url, (err, db) => {
+exports.insertUsers = (newUser) => {
+    MongoClient.connect(url, {useNewUrlParser: true}, (err, db) => {
         if (err) {
             throw err;
         }
         const dbo = db.db('nuntium');
-        const userToInsert = {
-            username: newUser.name,
-            email: newUser.email,
-            password: newUser.password
-        };
-        dbo.collection('users').insertOne(userToInsert, (err, res) => {
+        dbo.collection('users').insertOne(newUser, (err, res) => {
             if (err) {
                 throw err;
             }
