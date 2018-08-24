@@ -1,5 +1,5 @@
 const MongoClient = require('mongodb').MongoClient;
-const url = 'mongodb://192.168.2.7:27017/nuntium';
+const url = 'mongodb://localhost:27017/nuntium';
 
 exports.insertUsers = (newUser) => {
     MongoClient.connect(url, {useNewUrlParser: true}, (err, db) => {
