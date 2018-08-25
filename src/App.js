@@ -3,13 +3,14 @@ import logo from './logo.png'
 import menuicon from './menuicon.png';
 import { Feed } from './Feed';
 import { Signup } from './Signup';
+import { Login } from './Login';
 import './Header.css';
 
 export class App extends React.Component {
     constructor (props) {
         super(props);
         this.state = {
-            page: 'signup' // until express integration is done
+            page: 'signup'
         };
         this.handleClick = this.handleClick.bind(this);
     }
@@ -21,7 +22,11 @@ export class App extends React.Component {
             });
         } else if (this.state.page === 'signup') {
             this.setState ({
-                page: 'home'
+                page: 'login'
+            });
+        } else if (this.state.page === 'login') {
+            this.setState({
+                page: 'signup'
             });
         }
     }
@@ -36,7 +41,7 @@ export class App extends React.Component {
                     </div>
                     <img className='menuicon' src={menuicon} alt='Menu icon'/>
                 </header>
-                <Feed/>
+                <Feed />
             </div>   
         );
 
@@ -53,11 +58,25 @@ export class App extends React.Component {
             </div>
         );
 
+        let login = (
+            <div>
+                <header className='header'>
+                    <img className='logo' src={logo} alt='Logo'/>
+                    <div className='signupbutton' onClick={this.handleClick}>
+                        <p className='buttontext'>Log In</p>
+                    </div>
+                    <img className='menuicon' src={menuicon} alt='Menu icon'/>
+                </header>
+                <Login />
+            </div>
+        )
+
         if (this.state.page === 'home') {
             return home;
-        } else {
+        } else if (this.state.page === 'signup') {
             return signup;
+        } else {
+            return login;
         }
-
     }
 }

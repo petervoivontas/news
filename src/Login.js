@@ -1,17 +1,10 @@
 import React from 'react';
-import './Signup.css';
 
-export class Signup extends React.Component {
-    constructor (props) {
-        super(props);
-        this.handleClick = this.handleClick.bind(this);
-    }
-
+export class Login extends React.Component {
     handleClick () {
-        fetch('http://192.168.2.10:4000/signup', {
+        fetch('http://192.168.2.10:4000/login', {
             method: 'POST',
             body: JSON.stringify({
-                name: document.getElementById('username').value,
                 email: document.getElementById('email').value,
                 password: document.getElementById('password').value
             }),
@@ -35,18 +28,16 @@ export class Signup extends React.Component {
                 <div>
                     <p>Your opinion matters</p>
                     <hr />
-                    <p>Sign up to Nuntium</p>
+                    <p>Welcome back to Nuntium</p>
                 </div>
                 <div>
-                    <p>Your name</p>
-                    <input id='username' title='username' type='text' autoComplete='on'></input>
                     <p>Email</p>
                     <input id='email' title='email' type='email' autoComplete='on'></input>
                     <p>Password</p>
                     <input id='password' title='password' type='password' autoComplete='on'></input>
                     <br />
                     <br />
-                    <button onClick={this.handleClick}>Sign Up</button>
+                    <button onClick={this.handleClick}>Log In</button>
                 </div>
             </div>
         )
