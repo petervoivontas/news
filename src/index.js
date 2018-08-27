@@ -1,9 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-// import {Home} from './Home';
-// import {Signup} from './Signup';
-import { App } from './App';
+import { App } from './views/App';
+import './styles/index.css';
 import registerServiceWorker from './registerServiceWorker';
 
 ReactDOM.render(<App />, document.getElementById('root'));

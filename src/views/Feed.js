@@ -1,6 +1,7 @@
 import React from 'react';
 import {Topic} from './Topic';
-import {topics} from './topics';
+import {topics} from '../topics';
+import '../styles/Feed.css';
 
 export class Feed extends React.Component {
     render () {

@@ -11,7 +11,8 @@
     margin-top: 4px;
 }
 
-.signupbutton {
+.signupbutton,
+.loginbutton {
     grid-area: button;
     margin: 15px 8px 15px 100px;
     border: 1px #98B1C4 solid;
@@ -19,13 +20,19 @@
     color: #414141;
 }
 
-.signupbutton:hover {
+.signupbutton:hover,
+.loginbutton:hovre {
     background-color: #98B1C4;
 }
 
-.buttontext {
+.signupbutton p {
     width: 65px;
     margin: 17px 26px;
+}
+
+.loginbutton p {
+    width: 65px;
+    margin: 17px 30px;
 }
 
 .menuicon {

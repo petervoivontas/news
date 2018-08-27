@@ -1,6 +1,6 @@
 import React from 'react';
-import {topics} from './topics';
-import './Topic.css'
+import {topics} from '../topics';
+import '../styles/Topic.css'
 
 export class Topic extends React.Component {
     isLast (index) {
