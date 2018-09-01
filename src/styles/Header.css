@@ -11,8 +11,10 @@
     margin-top: 4px;
 }
 
-.signupbutton,
-.loginbutton {
+.signupButton,
+.loginButton,
+.profileButton,
+.signoutButton {
     grid-area: button;
     margin: 15px 8px 15px 100px;
     border: 1px #98B1C4 solid;
@@ -20,17 +22,29 @@
     color: #414141;
 }
 
-.signupbutton:hover,
-.loginbutton:hovre {
+.signupButton:hover,
+.loginButton:hover,
+.profileButton:hover,
+.signoutButton:hover {
     background-color: #98B1C4;
 }
 
-.signupbutton p {
+.signupButton p {
     width: 65px;
     margin: 17px 26px;
 }
 
-.loginbutton p {
+.loginButton p {
+    width: 65px;
+    margin: 17px 30px;
+}
+
+.profileButton p {
+    width: 65px;
+    margin: 17px 30px;
+}
+
+.signoutButton p {
     width: 65px;
     margin: 17px 30px;
 }
