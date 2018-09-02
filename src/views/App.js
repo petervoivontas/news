@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from '../icons/logo.png'
+import logo from '../icons/logo.png';
 import menuicon from '../icons/menuicon.png';
 import { Feed } from './Feed';
 import '../styles/Header.css';

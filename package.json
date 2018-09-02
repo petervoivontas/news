@@ -21,7 +21,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -b master -d build"
   },
-  "main": "index.js",
+  "main": "home.js",
   "repository": "https://github.com/petervoivontas/news.git",
   "author": "Peter Voivontas <petervoivontas@outlook.com>",
   "license": "MIT",

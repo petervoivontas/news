@@ -1,17 +1,19 @@
 import React from 'react';
+import {Header} from './Header';
 import '../styles/Signup.css';
 const config = require('../config');
 
 export class Signup extends React.Component {
     constructor (props) {
         super(props);
-        this.handleClick = this.handleClick.bind(this);
+        this.state = {
+            ip: config.ip
+        }
+        this.handleSignup = this.handleSignup.bind(this);
     }
 
-    ip = config.ip; // IP is set in config.js
-
-    handleClick () {
-        fetch(`http://${this.ip}:4000/signup`, {
+    handleSignup () {
+        fetch(`http://${this.state.ip}:4000/signup`, {
             method: 'POST',
             body: JSON.stringify({
                 name: document.getElementById('username').value,
@@ -35,6 +37,7 @@ export class Signup extends React.Component {
     render () {
         return (
             <div>
+                <Header page='signup' />
                 <div>
                     <p>Your opinion matters</p>
                     <hr />
@@ -49,7 +52,7 @@ export class Signup extends React.Component {
                     <input id='password' title='password' type='password' autoComplete='on'></input>
                     <br />
                     <br />
-                    <button onClick={this.handleClick}>Sign Up</button>
+                    <button onClick={this.handleSignup}>Sign Up</button>
                 </div>
             </div>
         )
