@@ -21,7 +21,7 @@ export class Header extends React.Component {
         super(props);
         this.state = {
             menuIsRendered: false
-        }
+        };
         this.handleImageClick = this.handleImageClick.bind(this);
         this.handleButtonClick = this.handleButtonClick.bind(this);
         this.handleMenuClick = this.handleMenuClick.bind(this);
@@ -66,7 +66,7 @@ export class Header extends React.Component {
 
     handleButtonClick () {
         if (this.props.page === 'signup') {
-            if (this.state.menuIsRendered) {
+            if (!this.state.menuIsRendered) {
                 $('.signupPage').fadeOut(500);
                 setTimeout (() => {
                     ReactDOM.render(<Login />, document.getElementById('app'));
@@ -79,7 +79,7 @@ export class Header extends React.Component {
                 }, 1000);
             }
         } else if (this.props.page === 'login') {
-            if (this.state.menuIsRendered) {
+            if (!this.state.menuIsRendered) {
                 $('.loginPage').fadeOut(500);
                 setTimeout(() => {
                     ReactDOM.render(<Signup />, document.getElementById('app'));
@@ -92,7 +92,7 @@ export class Header extends React.Component {
                 }, 1000);
             }
         } else {
-            if (this.state.menuIsRendered) {
+            if (!this.state.menuIsRendered) {
                 $('.homePage').fadeOut(500);
                 setTimeout(() => {
                     ReactDOM.render(<Signup />, document.getElementById('app'));
