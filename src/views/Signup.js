@@ -1,6 +1,13 @@
+// Dependencies
 import React from 'react';
+
+// Components
 import {Header} from './Header';
+
+// Stylesheet
 import '../styles/Signup.css';
+
+// Constants
 const config = require('../config');
 
 export class Signup extends React.Component {
@@ -36,7 +43,7 @@ export class Signup extends React.Component {
 
     render () {
         return (
-            <div>
+            <div className='signupPage'>
                 <Header page='signup' />
                 <div>
                     <p>Your opinion matters</p>

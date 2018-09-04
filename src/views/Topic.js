@@ -1,5 +1,10 @@
+// Dependencies
 import React from 'react';
+
+// topics list
 import {topics} from '../topics';
+
+// Stylesheet
 import '../styles/Topic.css'
 
 export class Topic extends React.Component {

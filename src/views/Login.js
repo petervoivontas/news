@@ -1,6 +1,14 @@
+// Dependencies
 import React from 'react';
+import $ from 'jquery';
+
+// Components
 import { Header } from './Header';
+
+// Stylesheet
 import '../styles/Login.css';
+
+// Constants
 const config = require('../config');
 
 export class Login extends React.Component {
@@ -12,7 +20,10 @@ export class Login extends React.Component {
         this.handleLogin = this.handleLogin.bind(this);
     }
 
-    ip = config.ip; // IP is set in config.js
+    componentDidMount () {
+        $('.login').hide();
+        $('.login').fadeIn(500);
+    }
 
     handleLogin () {
         fetch(`http://${this.state.ip}:4000/login`, {
@@ -37,7 +48,7 @@ export class Login extends React.Component {
 
     render () {
         return (
-            <div>
+            <div className='loginPage'>
                 <Header page='login' />
                 <div>
                     <p>Your opinion matters</p>

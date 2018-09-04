@@ -11,48 +11,49 @@
     margin-top: 4px;
 }
 
-.signupButton,
-.loginButton,
-.profileButton,
-.signoutButton {
-    grid-area: button;
-    margin: 15px 8px 15px 100px;
-    border: 1px #98B1C4 solid;
-    border-radius: 25px;
-    color: #414141;
-}
-
-.signupButton:hover,
-.loginButton:hover,
-.profileButton:hover,
-.signoutButton:hover {
-    background-color: #98B1C4;
-}
-
-.signupButton p {
-    width: 65px;
-    margin: 17px 26px;
-}
-
-.loginButton p {
-    width: 65px;
-    margin: 17px 30px;
-}
-
-.profileButton p {
-    width: 65px;
-    margin: 17px 30px;
-}
-
-.signoutButton p {
-    width: 65px;
-    margin: 17px 30px;
-}
-
 .menuicon {
     grid-area: menu;
     width: 70px;
     height: 70px;
     margin-top: 10px;
-    opacity: 0.5;
+    /* opacity: 0.5; */
+}
+
+.animation {
+    grid-area: animation;
+    position: relative;
+    width: 50px;
+    height: 30px;
+    margin: 27px 10px;
+}
+
+.animation div {
+    position: absolute;
+    background-color: #000;
+    border-radius: 10%;
+    width: 50px;
+    height: 10px;
+    transition: top 1s 1s, bottom 1s 1s, transform 1s;
+}
+
+.animation:hover div {
+    transition: top 1s, bottom 1s, transform 1s 1s;
+}
+
+.animation div:nth-of-type(1) {
+    top: 0px;
+}
+
+.animation div:nth-of-type(2) {
+    bottom: 0px;
+}
+
+.animation:hover div:nth-of-type(1) {
+    top: 10px;
+    transform: rotate(45deg);
+}
+
+.animation:hover div:nth-of-type(2) {
+    bottom: 10px;
+    transform: rotate(-45deg);
 }

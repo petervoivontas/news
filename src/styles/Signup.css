@@ -1,0 +1,16 @@
+.signupButton {
+    grid-area: button;
+    margin: 15px 8px 15px 100px;
+    border: 1px #98B1C4 solid;
+    border-radius: 25px;
+    color: #414141;
+}
+
+.signupButton:hover {
+    background-color: #98B1C4;
+}
+
+.signupButton p {
+    width: 65px;
+    margin: 17px 26px;
+}
