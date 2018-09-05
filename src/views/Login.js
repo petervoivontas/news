@@ -21,8 +21,9 @@ export class Login extends React.Component {
     }
 
     componentDidMount () {
-        $('.login').hide();
-        $('.login').fadeIn(500);
+        const loginPage = $('.loginPage');
+        loginPage.hide();
+        loginPage.fadeIn(500);
     }
 
     handleLogin () {

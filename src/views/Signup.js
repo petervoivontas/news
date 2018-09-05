@@ -1,5 +1,6 @@
 // Dependencies
 import React from 'react';
+import $ from 'jquery';
 
 // Components
 import {Header} from './Header';
@@ -17,6 +18,12 @@ export class Signup extends React.Component {
             ip: config.ip
         }
         this.handleSignup = this.handleSignup.bind(this);
+    }
+
+    componentDidMount () {
+        const signupPage = $('.signupPage');
+        signupPage.hide();
+        signupPage.fadeIn(500);
     }
 
     handleSignup () {

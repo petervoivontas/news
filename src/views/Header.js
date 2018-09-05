@@ -19,16 +19,9 @@ import '../styles/Header.css';
 export class Header extends React.Component {
     constructor (props) {
         super(props);
-        this.state = {
-            menuIsRendered: false
-        };
         this.handleImageClick = this.handleImageClick.bind(this);
         this.handleButtonClick = this.handleButtonClick.bind(this);
         this.handleMenuClick = this.handleMenuClick.bind(this);
-    }
-
-    componentDidMount () {
-        $('.menu').hide();
     }
 
     componentWillMount () {
@@ -45,65 +38,49 @@ export class Header extends React.Component {
         }
     }
 
+    componentDidMount () {
+        $('.menu').hide();
+    }
+
     handleMenuClick () {
         $('.menu').toggle(500);
-        if ($('.menu').css('display', 'none')) {
-            this.setState({
-                menuIsRendered: false
-            })
-        } else {
-            this.setState({
-                menuIsRendered: true
-            })
-        }
     }
 
     handleImageClick () {
-        if (this.props.page) {
-            ReactDOM.render(<Home />, document.getElementById('app'));
+        if (this.props.page === 'signup') {
+            const signupPage = $('.signupPage');
+            signupPage.fadeOut(500);
+            setTimeout(() => {
+                ReactDOM.render(<Home firstRender={false}/>, document.getElementById('app'));
+            }, 500);
+        } else if (this.props.page === 'login') {
+            const loginPage = $('.loginPage');
+            loginPage.fadeOut(500);
+            setTimeout(() => {
+                ReactDOM.render(<Home firstRender={false}/>, document.getElementById('app'));
+            }, 500);
         }
     }
 
     handleButtonClick () {
-        if (this.props.page === 'signup') {
-            if (!this.state.menuIsRendered) {
-                $('.signupPage').fadeOut(500);
-                setTimeout (() => {
-                    ReactDOM.render(<Login />, document.getElementById('app'));
-                }, 500);
-            } else {
-                $('.menu').toggle(500);
-                $('.signupPage').fadeOut(500);
-                setTimeout (() => {
-                    ReactDOM.render(<Login />, document.getElementById('app'));
-                }, 1000);
-            }
-        } else if (this.props.page === 'login') {
-            if (!this.state.menuIsRendered) {
-                $('.loginPage').fadeOut(500);
-                setTimeout(() => {
-                    ReactDOM.render(<Signup />, document.getElementById('app'));
-                }, 500);
-            } else {
-                $('.menu').toggle(500);
-                $('.loginPage').fadeOut(500);
-                setTimeout(() => {
-                    ReactDOM.render(<Signup />, document.getElementById('app'));
-                }, 1000);
-            }
+        const homePage = $('.homePage');
+        const signupPage = $('.signupPage');
+        const loginPage = $('.loginPage');
+        if (this.props.page === 'home') {
+            homePage.fadeOut(500);
+            setTimeout(() => {
+                ReactDOM.render(<Signup />, document.getElementById('app'));
+            }, 500);
+        } else if (this.props.page === 'signup') {
+            signupPage.fadeOut(500);
+            setTimeout(() => {
+                ReactDOM.render(<Login />, document.getElementById('app'));
+            }, 500);
         } else {
-            if (!this.state.menuIsRendered) {
-                $('.homePage').fadeOut(500);
-                setTimeout(() => {
-                    ReactDOM.render(<Signup />, document.getElementById('app'));
-                }, 500);
-            } else {
-                $('.menu').toggle(500);
-                $('.homePage').fadeOut(500);
-                setTimeout(() => {
-                    ReactDOM.render(<Signup />, document.getElementById('app'));
-                }, 1000);
-            }
+            loginPage.fadeOut(500);
+            setTimeout(() => {
+                ReactDOM.render(<Signup />, document.getElementById('app'));
+            }, 500);
         }
     }
 
