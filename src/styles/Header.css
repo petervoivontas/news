@@ -21,13 +21,13 @@
 .signupButton {
     grid-area: button;
     margin: 15px 8px 15px 100px;
-    border: 1px #F24405 solid;
+    border: 1px #E15119 solid;
     border-radius: 25px;
     color: #414141;
 }
 
 .signupButton:hover {
-    background-color: #F24405;
+    background-color: #E15119;
 }
 
 .signupButton p {
