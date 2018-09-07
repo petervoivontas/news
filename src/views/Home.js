@@ -30,6 +30,9 @@ export class Home extends React.Component {
             <div className='homePage'>
                 <Header page='home'/>
                 <Feed/>
+                <div className='newTopic'>
+                    <p>+</p>
+                </div>
             </div>
         )
     }

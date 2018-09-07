@@ -16,10 +16,43 @@
     width: 70px;
     height: 70px;
     margin-top: 10px;
-    /* opacity: 0.5; */
 }
 
-.animation {
+.signupButton {
+    grid-area: button;
+    margin: 15px 8px 15px 100px;
+    border: 1px #F24405 solid;
+    border-radius: 25px;
+    color: #414141;
+}
+
+.signupButton:hover {
+    background-color: #F24405;
+}
+
+.signupButton p {
+    width: 65px;
+    margin: 17px 26px;
+}
+
+.loginButton {
+    grid-area: button;
+    margin: 15px 8px 15px 100px;
+    border: 1px #98B1C4 solid;
+    border-radius: 25px;
+    color: #414141;
+}
+
+.loginButton:hover {
+    background-color: #98B1C4;
+}
+
+.loginButton p {
+    width: 65px;
+    margin: 17px 30px;
+}
+
+/* .animation {
     grid-area: animation;
     position: relative;
     width: 50px;
@@ -56,4 +89,4 @@
 .animation:hover div:nth-of-type(2) {
     bottom: 10px;
     transform: rotate(-45deg);
-}
+} */
