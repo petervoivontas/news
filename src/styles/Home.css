@@ -1,4 +1,25 @@
-.newTopic {
+@keyframes moveUp {
+    from {
+        bottom: 24px;
+    }
+    to {
+        bottom: 500px;
+        transform: rotate(45deg);
+    }
+}
+
+@keyframes moveDown {
+    from {
+        bottom: 300px;
+        transform: rotate(45deg);
+    }
+    to {
+        bottom: 24px;
+        transform: rotate(-45deg);
+    }
+}
+
+.newStory {
     position: fixed;
     width: 48px;
     height: 48px;
@@ -8,7 +29,7 @@
     right: 24px;
 }
 
-.newTopic p {
+.newStory p {
     color: white;
     font-size: 32px;
     margin: 4px auto;

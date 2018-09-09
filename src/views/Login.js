@@ -1,8 +1,10 @@
 // Dependencies
 import React from 'react';
+import ReactDOM from 'react-dom';
 import $ from 'jquery';
 
 // Components
+import { Home } from './Home';
 import { Header } from './Header';
 
 // Stylesheet
@@ -27,24 +29,39 @@ export class Login extends React.Component {
     }
 
     handleLogin () {
-        fetch(`http://${this.state.ip}:4000/login`, {
-            method: 'POST',
-            body: JSON.stringify({
-                email: document.getElementById('email').value,
-                password: document.getElementById('password').value
-            }),
-            headers:{
-                'Content-Type': 'application/json'
-            },
-        }).then(response => {
-            if (response.ok) {
-                return response.json();
-            }
-            throw new Error('Request failed');
-        }, networkError => console.log(networkError)
-        ).then(jsonResponse => {
-            console.log(jsonResponse);
-        });
+        const email = $('#email').val().trim();
+        const password = $('#password').val().trim();
+
+        if (email !== '' && password !== '') {
+            fetch(`http://${this.state.ip}:4000/login`, {
+                method: 'POST',
+                body: JSON.stringify({
+                    email: email,
+                    password: password
+                }),
+                headers:{
+                    'Content-Type': 'application/json'
+                }
+            }).then(response => {
+                if (response.ok) {
+                    return response.json();
+                }
+                throw new Error('Request failed');
+            }, networkError => console.log(networkError)
+            ).then(jsonResponse => {
+                console.log(jsonResponse);
+                $('.loginPage').fadeOut(500);
+                setTimeout(() => {
+                    ReactDOM.render(<Home firstRender={false} name={jsonResponse.name} email={jsonResponse.email} password={jsonResponse.password}/>, document.getElementById('app'));
+                }, 500);
+            });
+        } else if (email === '' && password === '') {
+            console.log('Email and password are required');
+        } else if (email === '') {
+            console.log('Email cannot be empty');
+        } else {
+            console.log('Password cannot be empty');
+        }
     }
 
     render () {

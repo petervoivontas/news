@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "async": "^2.6.1",
     "body-parser": "^1.18.3",
     "express": "^4.16.3",
     "jquery": "^3.3.1",
@@ -19,7 +18,7 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
-  "main": "home.js",
+  "main": "index.js",
   "repository": "https://github.com/petervoivontas/news.git",
   "author": "Peter Voivontas <petervoivontas@outlook.com>",
   "license": "MIT"
