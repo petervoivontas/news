@@ -78,16 +78,13 @@ export class Signup extends React.Component {
                     <hr />
                     <p>Sign up to Nuntium</p>
                 </div>
-                <div>
-                    <p>Your name</p>
-                    <input id='username' title='username' type='text' autoComplete='on'></input>
-                    <p>Email</p>
-                    <input id='email' title='email' type='email' autoComplete='on'></input>
-                    <p>Password</p>
-                    <input id='password' title='password' type='password' autoComplete='on'></input>
+                <div className='form'>
+                    <input id='username' title='username' type='text' autoComplete='on' placeholder='Your name'></input>
+                    <input id='email' title='email' type='email' autoComplete='on' placeholder='email'></input>
+                    <input id='password' title='password' type='password' autoComplete='on' placeholder='password'></input>
                     <br />
                     <br />
-                    <button onClick={this.handleSignup}>Sign Up</button>
+                    <button id='submit' onClick={this.handleSignup}>Sign Up</button>
                 </div>
             </div>
         )

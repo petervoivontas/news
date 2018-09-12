@@ -1,0 +1,36 @@
+.signupPage input {
+    background-color: white;
+    color: black;
+    border: 1px solid #98B1C4;
+    border-radius: 10px;
+    padding: 8px;
+    margin: 8px auto;
+}
+
+::placeholder {
+    color: grey;
+}
+
+.form {
+    display: grid;
+    grid-template: 1fr 1fr 1fr 1fr / 100%;
+    grid-template-areas: 'username' 'email' 'password' 'submit';
+}
+
+#username {
+    grid-area: username;
+}
+
+#email {
+    grid-area: email;
+}
+
+#password {
+    grid-area: password;
+}
+
+#submit {
+    grid-area: submit;
+    width: 70px;
+    height: 100px;
+}
