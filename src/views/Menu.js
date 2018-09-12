@@ -19,14 +19,7 @@ export class Menu extends React.Component {
         this.state = {
             value: ''
         }
-        this.handleChange = this.handleChange.bind(this);
         this.handleHomeClick = this.handleHomeClick.bind(this);
-    }
-
-    handleChange (event) {
-        this.setState({
-            value: event.target.value
-        })
     }
 
     handleHomeClick () {
@@ -35,7 +28,7 @@ export class Menu extends React.Component {
         } else {
             $('.menu').toggle(500);
             setTimeout(() => {
-                ReactDOM.render(<Home />, document.getElementById('app'));
+                ReactDOM.render(<Home firstRender={false} />, document.getElementById('app'));
             }, 500);
         }
     }
@@ -45,7 +38,7 @@ export class Menu extends React.Component {
             <div className='menu'>
                 <div className='search'>
                     <img src={searchicon} alt='Search'/>
-                    <input id='searchfield' title='search' type='text' value={this.state.value} onChange={this.handleChange}></input>
+                    <input title='search' type='text' autoCorrect='on' placeholder='Search'></input>
                 </div>
                 <div className='home'>
                     <img src={homeicon} alt='Home' onClick={this.handleHomeClick}/>

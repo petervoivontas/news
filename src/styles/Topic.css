@@ -1,7 +1,8 @@
 .grid {
     display: grid;
-    width: 360px;
+    width: 344px;
     height: 320px;
+    margin: auto;
     grid-template: 100px 220px / 100%;
     grid-template-areas: 'info' 'text';
 }
@@ -27,7 +28,6 @@
     font-family: 'Noto serif', serif;
 }
 
-.line {
-    margin: 0 auto;
-    width: 340px;
+.isNotLast {
+    border-bottom: 1px solid black;
 }

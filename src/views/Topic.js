@@ -1,52 +1,44 @@
 // Dependencies
 import React from 'react';
 
-// topics list
-import {topics} from '../topics';
-
 // Stylesheet
 import '../styles/Topic.css'
 
 export class Topic extends React.Component {
-    isLast (index) {
-        if (index + 1 === topics.length) {
-            return true;
-        } else {
-            return false;
+    constructor (props) {
+        super(props);
+        this.state = {
+            className: 'grid isNotLast',
+            loading: true
         }
     }
-    
+
+    componentDidMount () {
+        if (this.props.isLast) {
+            this.setState({
+                className: 'grid isLast',
+                loading: false
+            })
+        } else {
+            this.setState({
+                loading: false
+            })
+        }
+    }
 
     render () {
-        let isLast = (
-            <div>
-                <div className='grid'>
+        if (this.state.loading === false) {
+            return (
+                <div className={this.state.className}>
                     <div className='info'>
                         <p className='title'>{this.props.title}</p>
                         <p className='author'>By {this.props.author}</p>
                     </div>
                     <p className='text'>{this.props.children}</p>
                 </div>
-            </div>
-        );
-
-        let isNotLast = (
-            <div>
-                <div className='grid'>
-                    <div className='info'>
-                        <p className='title'>{this.props.title}</p>
-                        <p className='author'>By {this.props.author}</p>
-                    </div>
-                    <p className='text'>{this.props.children}</p>
-                </div>
-                <hr className='line'/>
-            </div>
-        );
-
-        if (this.isLast(this.props.index)) {
-            return isLast;
+            )
         } else {
-            return isNotLast;
+            return <div></div>
         }
     }
 }

@@ -15,13 +15,14 @@ export class Feed extends React.Component {
         super(props);
         this.state = {
             ip: config.ip,
-            topics: []
+            loading: true
         }
     }
 
-    componentWillReceiveProps () {
+    componentWillMount () {
         this.setState({
-            topics: this.props.topics
+            topics: this.props.topics,
+            loading: false
         })
     }
 
@@ -41,10 +42,19 @@ export class Feed extends React.Component {
     // }
 
     render () {
-        return (
-            this.state.topics.map((topic, i) => {
-                return <Topic key={i} title={topic.title} author={topic.author}>{topic.content}</Topic>
-            })
-        )
+        if (this.state.loading === false && this.state.topics) {
+            return (
+                this.state.topics.map((topic, i) => {
+                    if (i + 1 === this.state.topics.length) {
+                        return <Topic isLast={true} key={i} title={topic.title} author={topic.author}>{topic.content}</Topic>
+                    } else {
+                        return <Topic key={i} title={topic.title} author={topic.author}>{topic.content}</Topic>
+                    }
+                    
+                })
+            )
+        } else {
+            return <div></div>
+        }
     }
 }
