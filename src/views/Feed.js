@@ -15,8 +15,14 @@ export class Feed extends React.Component {
         super(props);
         this.state = {
             ip: config.ip,
-            topics: this.props.topics
+            topics: []
         }
+    }
+
+    componentWillReceiveProps () {
+        this.setState({
+            topics: this.props.topics
+        })
     }
 
     // componentWillMount () {

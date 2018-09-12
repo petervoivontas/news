@@ -26,6 +26,12 @@ export class Home extends React.Component {
         this.handleClick = this.handleClick.bind(this);
     }
 
+    componentWillUnmount () {
+        this.setState({
+            topics: []
+        })
+    }
+
     componentWillMount () {
         fetch(`http://${this.state.ip}:4000/getStories`).then(response => {
             if (response.ok) {
