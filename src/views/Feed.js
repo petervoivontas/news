@@ -44,14 +44,10 @@ export class Feed extends React.Component {
     render () {
         if (this.state.loading === false && this.state.topics) {
             return (
-                this.state.topics.map((topic, i) => {
-                    if (i + 1 === this.state.topics.length) {
-                        return <Topic isLast={true} key={i} title={topic.title} author={topic.author}>{topic.content}</Topic>
-                    } else {
-                        return <Topic key={i} title={topic.title} author={topic.author}>{topic.content}</Topic>
-                    }
-                    
-                })
+                <div className='feed'>
+                    <Topic key={1} title={this.state.topics[0].title} author={this.state.topics[0].author}>{this.state.topics[0].content}</Topic>
+                    <Topic key={2} title={this.state.topics[1].title} author={this.state.topics[1].author}>{this.state.topics[1].content}</Topic>
+                </div>
             )
         } else {
             return <div></div>
