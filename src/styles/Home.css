@@ -24,7 +24,7 @@
     width: 48px;
     height: 48px;
     border-radius: 100%;
-    background-color: #F24405;
+    background-color: #FF7153;
     bottom: 24px;
     right: 24px;
 }
@@ -32,6 +32,6 @@
 .newStory p {
     color: white;
     font-size: 32px;
-    margin: 4px auto;
+    margin: auto;
     text-align: center;
 }

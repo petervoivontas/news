@@ -1,5 +1,6 @@
 // Dependencies
 import React from 'react';
+import $ from 'jquery';
 
 // Components
 import {Topic} from './Topic';
@@ -17,6 +18,9 @@ export class Feed extends React.Component {
             ip: config.ip,
             loading: true
         }
+        // this.handleSwipe = this.handleSwipe.bind(this);
+        // this.handleTouchStart = this.handleTouchStart.bind(this);
+        // this.handleTouchEnd = this.handleTouchEnd.bind(this);
     }
 
     componentWillMount () {
@@ -26,26 +30,55 @@ export class Feed extends React.Component {
         })
     }
 
-    // componentWillMount () {
-    //     fetch(`http://${this.state.ip}:4000/getStories`).then(response => {
-    //         if (response.ok) {
-    //             return response.json();
-    //         }
-    //         throw new Error('Request failed');
-    //     }, networkError => console.log(networkError)
-    //     ).then(jsonResponse => {
-    //         console.log(jsonResponse);
-    //         this.setState({
-    //             topics: jsonResponse
+    startX;
+    startY;
+    dist;
+    threshold = 150;
+    allowedTime = 200;
+    elapsedTime;
+    startTime;
+
+    // handleSwipe (isSwipeUp) {
+    //     if (isSwipeUp) {
+    //         const div = document.getElementsByClassName('first');
+    //         console.log('You have made a swipe up');
+    //         $('.first').css({
+    //             'animation-name': 'swipeUp',
+    //             'animation-duration': '2s',
+    //             'animation-fill-mode': 'forwards'
     //         });
-    //     });
+    //     } else {
+    //         console.log('Conditions not met for swipe up');
+    //     }
+    // }
+
+    // handleTouchStart (e) {
+    //     const touchobj = e.changedTouches[0];
+    //     this.dist = 0;
+    //     this.startX = touchobj.pageX;
+    //     this.startY = touchobj.pageY;
+    //     this.startTime = new Date().getTime();
+    //     e.preventDefault();
+    // }
+
+    // handleTouchMove (e) {
+    //     e.preventDefault();
+    // }
+
+    // handleTouchEnd (e) {
+    //     const touchobj = e.changedTouches[0];
+    //     this.dist = this.startY - touchobj.pageY;
+    //     this.elapsedTime = new Date().getTime() - this.startTime;
+    //     const swipeUpBoolean = (this.elapsedTime <= this.allowedTime && this.dist >= this.threshold /**&& Math.abs(touchobj.pageX - this.startX) <= 100*/);
+    //     this.handleSwipe(swipeUpBoolean);
+    //     e.preventDefault();
     // }
 
     render () {
         if (this.state.loading === false && this.state.topics) {
             return (
-                <div className='feed'>
-                    <Topic key={1} title={this.state.topics[0].title} author={this.state.topics[0].author}>{this.state.topics[0].content}</Topic>
+                <div className='feed' onTouchStart={this.handleTouchStart} onTouchMove={this.handleTouchMove} onTouchEnd={this.handleTouchEnd}>
+                    <Topic key={1} i='first' title={this.state.topics[0].title} author={this.state.topics[0].author}>{this.state.topics[0].content}</Topic>
                     <Topic key={2} title={this.state.topics[1].title} author={this.state.topics[1].author}>{this.state.topics[1].content}</Topic>
                 </div>
             )

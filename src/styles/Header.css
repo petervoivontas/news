@@ -2,6 +2,7 @@
     display: grid;
     grid-template: 100% / 70px 220px 70px;
     grid-template-areas: 'logo button menu';
+    z-index: 2;
 }
 
 .logo {

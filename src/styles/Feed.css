@@ -1,3 +1,36 @@
-.feed div:nth-child(2) {
-    
+@keyframes swipeUp {
+    from {
+        bottom: initial;
+    }
+    to {
+        bottom: 200px;
+    }
+}
+
+.feed {
+    width: 340px;
+    height: 460px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.feed div {
+    position: absolute;
+}
+
+.feed div:nth-of-type(1) {
+    margin: auto;
+    z-index: 1;
+}
+
+.feed div:nth-of-type(2) {
+    width: 326px;
+    position: relative;
+    top: 6px;
+    margin: auto;
+    z-index: 0;
+}
+
+.feed .topicGrid {
+    box-shadow: 0px 5px 6px rgba(0, 0, 0, 0.16);
 }
