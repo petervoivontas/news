@@ -1,1 +1,1 @@
-exports.ip = '192.168.2.6';
+exports.ip = 'localhost';
