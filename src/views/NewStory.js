@@ -36,7 +36,7 @@ export class NewStory extends React.Component {
         const titleInput = $('.titleInput').val().trim();
         const storyContent = $('.storyContent').val().trim();
         if (titleInput !== '' && storyContent !== '') {
-            fetch(`http://${this.state.ip}:4000/uploadStory`, {
+            fetch(`http://${this.state.ip}:4000/stories/uploadStory`, {
                 method: 'POST',
                 body: JSON.stringify({
                     author: author,

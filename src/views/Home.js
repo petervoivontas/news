@@ -33,7 +33,7 @@ export class Home extends React.Component {
     }
 
     componentWillMount () {
-        fetch(`http://${this.state.ip}:4000/getStories`).then(response => {
+        fetch(`http://${this.state.ip}:4000/stories/getStories`).then(response => {
             if (response.ok) {
                 return response.json();
             }

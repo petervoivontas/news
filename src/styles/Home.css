@@ -1,24 +1,3 @@
-@keyframes moveUp {
-    from {
-        bottom: 24px;
-    }
-    to {
-        bottom: 500px;
-        transform: rotate(45deg);
-    }
-}
-
-@keyframes moveDown {
-    from {
-        bottom: 300px;
-        transform: rotate(45deg);
-    }
-    to {
-        bottom: 24px;
-        transform: rotate(-45deg);
-    }
-}
-
 .newStory {
     position: fixed;
     width: 48px;
@@ -34,4 +13,8 @@
     font-size: 32px;
     margin: auto;
     text-align: center;
+}
+
+.homePage {
+    display: grid;
 }

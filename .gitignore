@@ -21,4 +21,3 @@ yarn-debug.log*
 yarn-error.log*
 README.md
 yarn.lock
-src/config.js

@@ -33,7 +33,7 @@ export class Login extends React.Component {
         const password = $('#password').val().trim();
 
         if (email !== '' && password !== '') {
-            fetch(`http://${this.state.ip}:4000/login`, {
+            fetch(`http://${this.state.ip}:4000/users/login`, {
                 method: 'POST',
                 body: JSON.stringify({
                     email: email,

@@ -1,32 +1,29 @@
 .topicGrid {
     display: grid;
-    width: 340px;
-    height: 441px;
-    margin: auto;
-    grid-template: 100px 220px / 100%;
+    width: 21.25em;
+    height: 27.5em;
+    grid-template: 6.25em 21.25em / 100%;
     grid-template-areas: 'info' 'text';
     background-image: linear-gradient(135deg, #FF5733, #FF9179);
     border-radius: 15px;
     color: white;
-    padding: 18px;
+    padding: 1.125em;
     box-sizing: border-box;
 }
 
 .info {
     grid-area: info;
-    margin: 0 8px;
 }
 
 .author {
-    font-size: 14px;
+    font-size: 1em;
 }
 
 .title {
-    font-size: 20px;
+    font-size: 1.25em;
 }
 
 .text {
     grid-area: text;
-    margin: 8px 0 0 8px;
-    font-size: 16px;
+    font-size: 1em;
 }

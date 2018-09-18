@@ -35,7 +35,7 @@ export class Signup extends React.Component {
         const password = $('#password').val().trim();
 
         if (name !== '' && email !== '' && password !== '') {
-            fetch(`http://${this.state.ip}:4000/signup`, {
+            fetch(`http://${this.state.ip}:4000/users/signup`, {
                 method: 'POST',
                 body: JSON.stringify({
                     name: document.getElementById('username').value,

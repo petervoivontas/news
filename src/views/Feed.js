@@ -1,6 +1,5 @@
 // Dependencies
 import React from 'react';
-import $ from 'jquery';
 
 // Components
 import {Topic} from './Topic';
