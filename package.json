@@ -5,6 +5,7 @@
   "dependencies": {
     "body-parser": "^1.18.3",
     "express": "^4.16.3",
+    "firebase": "^5.5.4",
     "jquery": "^3.3.1",
     "module": "^1.2.5",
     "mongodb": "^3.1.3",
